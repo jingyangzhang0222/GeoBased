@@ -19,7 +19,7 @@ const (
 	//PROJECT_ID = "around-xxx"
 	//BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
-	ES_URL = "http://35.185.79.135:9200"
+	ES_URL = "http://35.196.231.235:9200"
 )
 
 // 1.3.1 Encode json object

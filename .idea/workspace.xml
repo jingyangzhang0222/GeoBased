@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55b4f82f-bb79-44a1-981d-3713e09cc6b7" name="Default" comment="" />
+    <list default="true" id="55b4f82f-bb79-44a1-981d-3713e09cc6b7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,15 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2380">
-              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="314">
+              <caret line="271" column="20" lean-forward="true" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+              <folding>
+                <element signature="e#14#147#0" expanded="true" />
+                <element signature="n#!!block;n#main#1" />
+                <element signature="n#!!block;n#handlerSearch#0" />
+                <element signature="e#3087#3367#0" />
+                <element signature="e#3370#3985#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,8 +78,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="151" />
-    <option name="y" value="29" />
+    <option name="x" value="262" />
+    <option name="y" value="102" />
     <option name="width" value="1383" />
     <option name="height" value="944" />
   </component>
@@ -84,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,9 +106,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,35 +280,36 @@
     <option name="totallyTimeSpent" value="97000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="151" y="29" width="1383" height="944" extended-state="0" />
+    <frame x="16" y="167" width="1383" height="944" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15907447" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15907447" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50253075" side_tool="true" visible="true" weight="0.3264368" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5032538" side_tool="true" visible="true" weight="0.3264368" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962714" weight="0.3270366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49746928" visible="true" weight="0.3264368" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4967462" visible="true" weight="0.3264368" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Properties" order="3" />
-      <window_info id="Designer" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info id="Nl-Palette" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Nl-Palette" order="3" />
+      <window_info id="Designer" order="5" />
+      <window_info anchor="right" id="Properties" order="3" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Maven Projects" order="3" />
     </layout>
@@ -311,14 +322,42 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3570">
+          <caret line="238" column="23" lean-forward="true" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="23" />
+          <folding>
+            <element signature="e#14#147#0" expanded="true" />
+            <element signature="n#!!block;n#main#1" />
+            <element signature="n#!!block;n#handlerSearch#0" />
+            <element signature="e#3087#3367#0" />
+            <element signature="e#3370#3985#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3510">
           <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
+          <folding>
+            <element signature="e#14#147#0" expanded="true" />
+            <element signature="n#!!block;n#main#1" />
+            <element signature="n#!!block;n#handlerSearch#0" />
+            <element signature="e#3087#3367#0" />
+            <element signature="e#3370#3985#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -385,34 +424,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mapDemo.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sliceDemo.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reduceLine.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appendToAnArray.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mapDemo.go" />
+    <entry file="file://$PROJECT_DIR$/sliceDemo.go" />
+    <entry file="file://$PROJECT_DIR$/reduceLine.go" />
+    <entry file="file://$PROJECT_DIR$/appendToAnArray.go" />
     <entry file="file:///usr/local/go/src/net/http/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -429,8 +444,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2380">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="314">
+          <caret line="271" column="20" lean-forward="true" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+          <folding>
+            <element signature="e#14#147#0" expanded="true" />
+            <element signature="n#!!block;n#main#1" />
+            <element signature="n#!!block;n#handlerSearch#0" />
+            <element signature="e#3087#3367#0" />
+            <element signature="e#3370#3985#0" />
+          </folding>
         </state>
       </provider>
     </entry>

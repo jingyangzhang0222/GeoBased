@@ -5,20 +5,22 @@ import (
 	"fmt"
 	"net/http"
 	"encoding/json"
-	"log"
 	"reflect"
 	"strconv"
 	"github.com/pborman/uuid"
 	"context"
 	"io"
 	"cloud.google.com/go/storage"
+	"log"
+	"github.com/auth0/go-jwt-middleware"
+	"github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/mux"
 )
 
 const (
 	INDEX    = "around"
 	TYPE     = "post"
 	DISTANCE = "200km"
-
 	PROJECT_ID = "around-210816"
 	BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
@@ -49,9 +51,9 @@ type Post struct {
 	Url    string `json:"url"`
 }
 
-func main() {
-	fmt.Println("Back-end Service Started Based on GoLang ")
+var mySigningKey = []byte("secret")
 
+func main() {
 	// Create a client
 	client, err := elastic.NewClient(elastic.SetURL(ES_URL), elastic.SetSniff(false))
 	if err != nil {
@@ -90,6 +92,8 @@ func main() {
 		}
 	}
 
+	fmt.Println("Back-end Service Started Based on GoLang ")
+	/*
 	// http handler Func mapping, /post -> handlerPost
 	http.HandleFunc("/post", handlerPost)
 
@@ -98,6 +102,32 @@ func main() {
 
 	// if err, throw a fatal message, show log message
 	log.Fatal(http.ListenAndServe(":8080", nil))
+	*/
+
+	/* 3.0 Auth*/
+	// Create a new router on top of the existing http router as we need to check auth.
+	r := mux.NewRouter()
+
+	// Create a new JWT middleware with a Option that uses the key ‘mySigningKey’ such that
+	// we know this token is from our server. The signing method is the default HS256 algorithm
+	// such that data is encrypted.
+	var jwtMiddleware = jwtmiddleware.New(jwtmiddleware.Options{
+		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
+			return mySigningKey, nil
+		},
+		SigningMethod: jwt.SigningMethodHS256,
+	})
+
+	// we use jwt middleware to manage these endpoints and if they don’t have valid token, we will reject them.
+	r.Handle("/post", jwtMiddleware.Handler(http.HandlerFunc(handlerPost))).Methods("POST")
+	r.Handle("/search", jwtMiddleware.Handler(http.HandlerFunc(handlerSearch))).Methods("GET")
+
+	// anyone can sigh up or login, no need to use jwtMiddleware
+	r.Handle("/login", http.HandlerFunc(loginHandler)).Methods("POST")
+	r.Handle("/signup", http.HandlerFunc(signupHandler)).Methods("POST")
+
+	http.Handle("/", r)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func handlerPost(w http.ResponseWriter, r *http.Request) {
@@ -105,6 +135,11 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type,Authorization")
+
+	/*2.1 Auth*/
+	user := r.Context().Value("user")
+	claims := user.(*jwt.Token).Claims
+	username := claims.(jwt.MapClaims)["username"]
 
 
 	// 32 << 20 is the maxMemory param for ParseMultipartForm, equals to 32MB (1MB = 1024 * 1024 bytes = 2^20 bytes)
@@ -117,7 +152,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	lat, _ := strconv.ParseFloat(r.FormValue("lat"), 64)
 	lon, _ := strconv.ParseFloat(r.FormValue("lon"), 64)
 	p := &Post{
-		User:    "1111",
+		User:    username.(string),
 		Message: r.FormValue("message"),
 		Location: Location{
 			Lat: lat,
@@ -376,4 +411,3 @@ func saveToES(p *Post, id string) {
 		return
 	}
 }
-
